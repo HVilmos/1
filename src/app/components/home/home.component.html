@@ -1,0 +1,30 @@
+  <form (ngSubmit)="add()" class="w-25">
+    <div class="mb-3">
+      <label for="title" class="form-label">Név</label>
+      <input type="email" class="form-control" id="title" name="title" [(ngModel)]="cardsForm.name">
+    </div>
+    <div class="mb-3">
+      <label for="price" class="form-label">Ár</label>
+      <input type="number" class="form-control" id="price" name="price" [(ngModel)]="cardsForm.price">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+
+  <div class="container mt-5">
+    <div class="" *ngFor="let card of cards">
+        <div class="">
+          <input type="text" class="m-1" [(ngModel)]="card.name">
+          <input type="number" [(ngModel)]="card.price">
+            <button type="button" class="btn btn-danger mx-3" (click)="delete(card)">Törlés</button>
+            <button type="button" class="btn btn-success mx-3" (click)="update(card)">Módosít</button>
+            <button type="button" class="btn btn-primary mx-3" (click)="addOrder(card)">Hozzáad</button>
+          </div>
+
+    </div>
+  </div>
+
+  <app-order></app-order>
+
+
+  
