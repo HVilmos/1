@@ -10,6 +10,8 @@ import { BaseService } from 'src/app/services/base.service';
 export class OrderComponent {
 
   order: any;
+  customerName: string = '';
+  customerAdress: string = '';
 
   constructor(private base: BaseService) {
     this.base.getOrder().snapshotChanges().pipe(
@@ -24,10 +26,18 @@ export class OrderComponent {
   }
 
   sendOrder() {
-    this.base.orderComplete(this.order);
+    const orderData = { 
+      customerName: this.customerName,
+      customerAdress: this.customerAdress,
+      orderItems: this.order 
+    };
+    this.base.orderComplete(orderData);
 
     this.order.forEach((orderItem: any) => {
-        this.base.deleteOrder(orderItem.key);
+      this.base.deleteOrder(orderItem.key);
     });
+
+    this.customerName = '';
+    this.customerAdress = '';
   }
 }

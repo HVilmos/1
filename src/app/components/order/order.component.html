@@ -1,8 +1,17 @@
-<div class="container">
+<div class="container w-25 mt-5">
+    <div class="mb-3">
+      <label for="customerName" class="form-label">Vásárló neve</label>
+      <input type="text" class="form-control" id="customerName" name="customerName" [(ngModel)]="customerName">
+    </div>
+    <div class="mb-3">
+      <label for="customerAdress" class="form-label">Cím</label>
+      <input type="text" class="form-control" id="customerAdress" name="customerAdress" [(ngModel)]="customerAdress">
+    </div>
     <div *ngFor="let orderItem of order" class="d-flex">
-        <p class="me-2">{{ orderItem.name }}</p>
-        <p class="me-2">{{ orderItem.price }}</p>
-        <button type="button" class="btn btn-danger mx-3" (click)="deleteOrder(orderItem)">Törlés</button>
+      <p class="me-2">{{ orderItem.name }}</p>
+      <p class="me-2">{{ orderItem.price }}</p>
+      <button type="button" class="btn btn-danger mx-3" (click)="deleteOrder(orderItem)">Törlés</button>
     </div>
     <button type="button" class="btn btn-primary" (click)="sendOrder()">Küld</button>
-</div>
+  </div>
+  
