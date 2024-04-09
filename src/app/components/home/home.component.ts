@@ -6,6 +6,7 @@ interface Card {
   key: string;
   name: string;
   price: number;
+  quantity:number
 }
 
 @Component({
@@ -43,7 +44,7 @@ export class HomeComponent {
   }
 
   addOrder(card: Card) {
-    const orderData = { name: card.name, price: card.price };
+    const orderData = { name: card.name, price: card.price, quantity: card.quantity };
     this.base.addOrder(orderData);
   }
 

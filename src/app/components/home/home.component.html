@@ -18,7 +18,9 @@
           <input type="number" [(ngModel)]="card.price">
             <button type="button" class="btn btn-danger mx-3" (click)="delete(card)">Törlés</button>
             <button type="button" class="btn btn-success mx-3" (click)="update(card)">Módosít</button>
+            <input type="number" [(ngModel)]="card.quantity" placeholder="Darabszám" min="1" value="1">
             <button type="button" class="btn btn-primary mx-3" (click)="addOrder(card)">Hozzáad</button>
+          
           </div>
     </div>
   </div>

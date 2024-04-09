@@ -9,7 +9,8 @@
     </div>
     <div *ngFor="let orderItem of order" class="d-flex">
       <p class="me-2">{{ orderItem.name }}</p>
-      <p class="me-2">{{ orderItem.price }}</p>
+      <p class="me-2">{{ orderItem.price }}FT</p>
+      <p class="me-2">{{ orderItem.quantity }} DB</p>
       <button type="button" class="btn btn-danger mx-3" (click)="deleteOrder(orderItem)">Törlés</button>
     </div>
     <button type="button" class="btn btn-primary" (click)="sendOrder()">Küld</button>
