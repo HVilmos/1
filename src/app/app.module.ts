@@ -13,12 +13,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Environments } from './environments';
 import { HomeComponent } from './components/home/home.component';
 import { OrderComponent } from './components/order/order.component';
+import { SearchFilterPipe } from './pipes/search-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     OrderComponent,
+    SearchFilterPipe,
   ],
   imports: [
     BrowserModule,

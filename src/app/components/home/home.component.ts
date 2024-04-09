@@ -19,6 +19,8 @@ export class HomeComponent {
 
   cards: Card[] = [];
   cardsForm={name:"",price:""}
+  searchTerm: string = "";
+
 
   constructor(private base:BaseService){
     this.base.getData().snapshotChanges().pipe(
@@ -47,5 +49,7 @@ export class HomeComponent {
     const orderData = { name: card.name, price: card.price, quantity: card.quantity };
     this.base.addOrder(orderData);
   }
+
+  
 
 }
